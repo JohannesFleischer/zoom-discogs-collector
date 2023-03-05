@@ -27,9 +27,9 @@ Output: csv of all your tracks from your whole collection with following data
 - Year
 - Album
 - Label
-- Date downloaded/created
 
-Need to check: 
+Need to check / to do: 
+- Date downloaded/created
 - Date added
 - Language
 - Century
