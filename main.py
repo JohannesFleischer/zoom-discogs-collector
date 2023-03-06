@@ -1,14 +1,18 @@
 import track as t
-
 import discogs_client as dc
 from discogs_client.exceptions import HTTPError
 from retry import retry
+from time import sleep
 import csv
 import os
 
 
 def main():
+    # user input
     token = input("Paste your token: \n")
+    filename = input("Please enter the name of the csv file: \n") + ".csv"
+
+    # connect to discogs client with token
     client = dc.Client("DiscogsCollector", user_token=token)
 
     # creates list of all releases of the personal user collection
@@ -16,8 +20,7 @@ def main():
         release.id for release in client.identity().collection_folders[0].releases
     ]
 
-    filename = "tracks.csv"
-
+    # delete file if exists (otherwise multiple executions would append the data to the same file)
     if os.path.exists(filename):
         os.remove(filename)
 
@@ -39,9 +42,9 @@ def main():
         foo(release_ids, client, writer)
 
 
-@retry(HTTPError, delay=5, tries=-1)  # FIXME fails if collection is to big
+@retry(HTTPError, delay=5, tries=-1)
 def foo(release_ids, client, writer):
-    # albums
+    # releases
     for id in release_ids:
         release = client.release(id)
 
@@ -73,6 +76,10 @@ def foo(release_ids, client, writer):
             logging(id, year, album, artist, label, genre, star_track, duration)
 
             writer.writerow(t.Track.get_values(track))
+
+            # TODO sleep -> proxys
+            # sleep for bigger collections (mayhaps a little less than 0.5 sec)
+            sleep(0.5)
 
 
 def logging(id, year, album, artist, label, genre, star_track, duration):

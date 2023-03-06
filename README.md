@@ -13,7 +13,7 @@ python main.py
 
 ## Usage
 
-Input: Discogs Token
+Input: <a href="https://www.discogs.com/de/settings/developers">Discogs Token</a>
 
 Output: csv of all your tracks from your whole collection with following data
 
