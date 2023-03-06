@@ -28,14 +28,11 @@ Output: csv of all your tracks from your whole collection with following data
 - Album
 - Label
 
-Need to check / to do: 
+Need to do: 
+- Catalog Nr (Labelcode)
 - Date downloaded/created
 - Date added
-- Language
+- Style / Subgenre
+- Format
+- RPM
 - Century
-- Subgenre
-- Discnumber
-- Catalog
-- Labelcode
-- Date
-- Media
