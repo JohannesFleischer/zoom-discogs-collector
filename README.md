@@ -45,7 +45,7 @@ pip install -r packages.txt
 python3 main.py
 ```
 
-or once `chmod +x main.py` and then `./main.py`
+- or once `chmod +x main.py` and then `./main.py`
 
 ## Usage
 
@@ -64,7 +64,8 @@ Output: csv of all your tracks from your whole collection with following data
 - Album
 - Label
 
-Need to do: 
+Need to do:
+
 - Catalog Nr (Labelcode)
 - Date downloaded/created
 - Date added
