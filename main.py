@@ -1,3 +1,5 @@
+#! python3
+
 import track as t
 import discogs_client as dc
 from discogs_client.exceptions import HTTPError
