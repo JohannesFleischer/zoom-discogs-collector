@@ -50,26 +50,22 @@ Input: <a href="https://www.discogs.com/de/settings/developers">Discogs Token</a
 
 Output: CSV of all your tracks from your whole collection with following data
 
-<center>
-
-Name | Comment | Status
+Name | Comment | Implementation status
 :-|:-:|:-:
-ID|| <input type="checkbox" checked/>
-Title|| <input type="checkbox" checked/>
-Artist|| <input type="checkbox" checked/>
-Comment|»Vinyl«| <input type="checkbox" checked />
-Duration|Milliseconds| <input type="checkbox" checked />
-Genre|| <input type="checkbox" checked/>
-Track|| <input type="checkbox" checked/>
-Year|| <input type="checkbox" checked />
-Album|| <input type="checkbox" checked/>
-Label|| <input type="checkbox" checked/>
-Catalog No.|Label code| <input type="checkbox" />
-Date downloaded/created||<input type="checkbox" />
-Date added||<input type="checkbox" />
-Style / Subgenre||<input type="checkbox" />
-Format||<input type="checkbox" />
-RPM ||<input type="checkbox" />
-Century ||<input type="checkbox" />
-
-</center>
+ID||✔️
+Title||✔️
+Artist||✔️
+Comment|»Vinyl«|✔️
+Duration|Milliseconds|✔️
+Genre||✔️
+Track||✔️
+Year||✔️
+Album||✔️
+Label||✔️
+Catalog No.|Label code|✖️ |
+Date downloaded/created||✖️
+Date added||✖️
+Style/Subgenre||✖️
+Format||✖️
+RPM||✖️
+Century||✖️
