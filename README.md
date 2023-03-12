@@ -46,6 +46,8 @@ python3 main.py
 ```
 
 - or once `chmod +x main.py` and then `./main.py`
+  
+> **_NOTE:_**  sometimes certain proxies cause problems. In this case, it may help to simply run the program again, as other proxies will then be randomly selected. 
 
 ## Usage
 
