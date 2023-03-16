@@ -64,8 +64,8 @@ def foo(release_ids, client, writer):
             )
 
             logging(id, year, album, artist, label, genre, star_track, duration)
-
             writer.writerow(t.Track.get_values(track))
+            sleep(0.25)
 
 
 def logging(id, year, album, artist, label, genre, star_track, duration):
