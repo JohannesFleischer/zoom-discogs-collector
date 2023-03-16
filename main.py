@@ -25,18 +25,8 @@ def main():
         os.remove(filename)
 
     with open(filename, "a", encoding="UTF8") as file:
-        writer = csv.writer(file, delimiter=";")
-        header = [
-            "id",
-            "year",
-            "album",
-            "artist",
-            "label",
-            "genre",
-            "title",
-            "position",  # TODO if empty -> no write
-            "duration",
-        ]
+        writer = csv.writer(file, delimiter=",")
+        header = open("header.txt", "r").read().split("\n")
         writer.writerow(header)
 
         foo(release_ids, client, writer)
@@ -76,10 +66,6 @@ def foo(release_ids, client, writer):
             logging(id, year, album, artist, label, genre, star_track, duration)
 
             writer.writerow(t.Track.get_values(track))
-
-            # TODO sleep -> proxys
-            # sleep for bigger collections (mayhaps a little less than 0.5 sec)
-            sleep(0.5)
 
 
 def logging(id, year, album, artist, label, genre, star_track, duration):
