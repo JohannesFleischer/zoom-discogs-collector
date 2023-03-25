@@ -25,7 +25,7 @@ def main():
         os.remove(filename)
 
     with open(filename, "a", encoding="UTF8") as file:
-        writer = csv.writer(file, delimiter=",")
+        writer = csv.writer(file, delimiter=";")
         header = open("header.txt", "r").read().split("\n")
         writer.writerow(header)
 
@@ -52,14 +52,13 @@ def foo(release_ids, client, writer):
                 star_track, duration_raw=star_track.duration
             )
             track = t.Track(
-                id,
+                str(id) + "_" + star_track.position,
                 year,
                 album,
                 artist,
                 label,
                 genre,
                 star_track.title,
-                star_track.position,
                 duration,
             )
 

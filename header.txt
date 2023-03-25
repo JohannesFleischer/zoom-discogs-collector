@@ -5,5 +5,4 @@ artist
 label
 genre
 title
-position
 duration
