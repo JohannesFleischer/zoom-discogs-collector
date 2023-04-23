@@ -30,17 +30,7 @@ def main():
 
     with open(filename, "a", encoding="UTF8") as file:
         writer = csv.writer(file, delimiter=";")
-        header = [
-            "id",
-            "year",
-            "album",
-            "artist",
-            "label",
-            "genre",
-            "title",
-            "position",  # TODO if empty -> no write
-            "duration",
-        ]
+        header = open("header.txt", "r").read().split("\n")
         writer.writerow(header)
 
         gen_and_write_track_data(release_ids, client, writer)
@@ -69,23 +59,19 @@ def gen_and_write_track_data(release_ids, client, writer):
                 star_track, duration_raw=star_track.duration
             )
             track = t.Track(
-                id,
+                str(id) + "_" + star_track.position,
                 year,
                 album,
                 artist,
                 label,
                 genre,
                 star_track.title,
-                star_track.position,
                 duration,
             )
 
             logging(id, year, album, artist, label, genre, star_track, duration)
-
             writer.writerow(t.Track.get_values(track))
-
             change_proxy(proxy_cycle)
-
 
 def logging(id, year, album, artist, label, genre, star_track, duration):
     print("id: " + str(id))

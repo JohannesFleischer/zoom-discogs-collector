@@ -1,0 +1,8 @@
+id
+year
+album
+artist
+label
+genre
+title
+duration

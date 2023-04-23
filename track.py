@@ -1,7 +1,5 @@
 class Track:
-    def __init__(
-        self, id, year, album, artist, label, genre, title, position, duration
-    ):
+    def __init__(self, id, year, album, artist, label, genre, title, duration):
         # TODO sanatize
         self.id = id
         self.year = year
@@ -10,13 +8,12 @@ class Track:
         self.label = label
         self.genre = genre
         self.title = title
-        self.position = position
         self.duration = duration
         pass
 
     def duration_to_ms(self, duration_raw: str) -> str:
         if not duration_raw:
-            return "2000"
+            return ""
         durations = duration_raw.split(":")
         ms = int(durations[0]) * 60000 + int(durations[1]) * 1000
         return ms if len(durations) == 2 else ms + int(durations[2])
